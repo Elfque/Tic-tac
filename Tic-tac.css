@@ -1,0 +1,50 @@
+body {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.title {
+  text-align: center;
+}
+table {
+  border: 2px solid whitesmoke;
+}
+input {
+  margin: 5px;
+  height: 4rem;
+  width: 4rem;
+  text-align: center;
+  font-size: 300%;
+  font-family: cursive;
+  outline: none;
+}
+.players {
+  display: flex;
+  justify-content: space-between;
+}
+.active {
+  background-color: rgb(105, 243, 253);
+  border: 1px solid #777;
+  padding: 3px;
+  border-radius: 5px;
+}
+.player {
+  border: 1px solid #777;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 0 3px;
+}
+.play {
+  align-items: center;
+  display: flex;
+}
+.winner {
+  background-color: rgb(62, 255, 62);
+  border: none;
+  color: whitesmoke;
+}
