@@ -14,10 +14,11 @@ body {
 table {
   border: 2px solid whitesmoke;
 }
-input {
+.inp {
   margin: 5px;
   height: 4rem;
   width: 4rem;
+  border: 1px solid black;
   text-align: center;
   font-size: 300%;
   font-family: cursive;

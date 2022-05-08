@@ -1,4 +1,4 @@
-let input = document.querySelectorAll("input");
+let input = document.querySelectorAll(".inp");
 let title = document.querySelector(".title");
 const player0 = document.querySelector(".player1");
 const player1 = document.querySelector(".player2");
@@ -21,11 +21,11 @@ let inp9 = document.querySelector(".inp9");
 for (let i = 0; i < input.length; i++) {
   input[i].addEventListener("click", () => {
     if (playing) {
-      if (input[i].value.length == 0) {
+      if (input[i].textContent.length == 0) {
         if (player0.className.includes("active")) {
-          input[i].value = "X";
+          input[i].textContent = "X";
         } else if (player1.className.includes("active")) {
-          input[i].value = "O";
+          input[i].textContent = "O";
         }
         player0.classList.toggle("active");
         player1.classList.toggle("active");
@@ -33,15 +33,15 @@ for (let i = 0; i < input.length; i++) {
     }
 
     if (
-      inp1.value.length == 1 &&
-      inp2.value.length == 1 &&
-      inp3.value.length == 1 &&
-      inp4.value.length == 1 &&
-      inp5.value.length == 1 &&
-      inp6.value.length == 1 &&
-      inp7.value.length == 1 &&
-      inp8.value.length == 1 &&
-      inp9.value.length == 1
+      inp1.textContent.length == 1 &&
+      inp2.textContent.length == 1 &&
+      inp3.textContent.length == 1 &&
+      inp4.textContent.length == 1 &&
+      inp5.textContent.length == 1 &&
+      inp6.textContent.length == 1 &&
+      inp7.textContent.length == 1 &&
+      inp8.textContent.length == 1 &&
+      inp9.textContent.length == 1
     ) {
       setTimeout(startOver, 1000);
     }
@@ -59,15 +59,15 @@ for (let i = 0; i < input.length; i++) {
 
 const startOver = () => {
   title.textContent = "TIC TAC";
-  inp1.value = "";
-  inp2.value = "";
-  inp3.value = "";
-  inp4.value = "";
-  inp5.value = "";
-  inp6.value = "";
-  inp7.value = "";
-  inp8.value = "";
-  inp9.value = "";
+  inp1.textContent = "";
+  inp2.textContent = "";
+  inp3.textContent = "";
+  inp4.textContent = "";
+  inp5.textContent = "";
+  inp6.textContent = "";
+  inp7.textContent = "";
+  inp8.textContent = "";
+  inp9.textContent = "";
   inp1.disabled = false;
   inp2.disabled = false;
   inp3.disabled = false;
@@ -82,20 +82,23 @@ const startOver = () => {
 
 const line = (input1, input2, input3) => {
   if (
-    input1.value.length == 1 &&
-    input2.value.length == 1 &&
-    input3.value.length == 1
+    input1.textContent.length == 1 &&
+    input2.textContent.length == 1 &&
+    input3.textContent.length == 1
   ) {
-    if (input1.value == input2.value && input2.value == input3.value) {
+    if (
+      input1.textContent == input2.textContent &&
+      input2.textContent == input3.textContent
+    ) {
       playing = false;
       input1.classList.add("winner");
       input2.classList.add("winner");
       input3.classList.add("winner");
-      if (input1.value === "X") {
+      if (input1.textContent === "X") {
         title.textContent = "PLAYER ONE WINS";
         scorecount0++;
         score1.innerHTML = scorecount0;
-      } else if (input1.value === "O") {
+      } else if (input1.textContent === "O") {
         title.textContent = "PLAYER TWO WINS";
         scorecount1++;
         score2.innerHTML = scorecount1;
